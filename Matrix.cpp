@@ -3,7 +3,7 @@
 #include <cmath>
 #include <iomanip>
 
-// 2019.5.23.01.00最终修改  --宋哲
+// 2019.5.23.01.00最终修改
 using namespace std;
 Matrix::Matrix()
 {
@@ -11,6 +11,7 @@ Matrix::Matrix()
 	colNum = 0;
 	item = NULL;
 }
+//零矩阵
 Matrix::Matrix(int m, int n)
 {
 	if (m < 0 || n < 0)
@@ -38,6 +39,7 @@ Matrix::Matrix(double* items, int m, int n)
 		item[i] = items[i];
 	}
 }
+//单位矩阵
 Matrix::Matrix(int n)
 {
 	rowNum = colNum = n;
@@ -232,9 +234,9 @@ Matrix Matrix::operator *(const Matrix &m)
 double Matrix::operator /(const double f)
 {
 	double _copy=0;
-	if (rowNum == 1 && colNum == 1) 
+	if (rowNum == 1 && colNum == 1)
 	{
-		_copy = item[0] / f; 
+		_copy = item[0] / f;
 		return _copy;
 	}
 	else cout << "矩阵行数和列数不为一"<<endl;
@@ -284,6 +286,6 @@ Matrix Matrix::Inverse()
 			result.RowSwap(i, j, r);
 		}
 	}
-	
+
 	return result;
 }
