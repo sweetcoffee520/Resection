@@ -104,7 +104,7 @@ void QtGuiApplication1::on_calculate()
 			fa = fa + x1.get(3, 0);
 			w = w + x1.get(4, 0);
 			ka = ka + x1.get(5, 0);
-			if (abs(x1.get(3, 0)) < 0.1 / 60 / 180 * pi|| abs(x1.get(4, 0)) < 0.1 / 60 / 180 * pi|| abs(x1.get(5, 0)) < 0.1 / 60 / 180 * pi) break;
+			if (abs(x1.get(3, 0)) < 0.1 / 60 / 180 * pi&& abs(x1.get(4, 0)) < 0.1 / 60 / 180 * pi&& abs(x1.get(5, 0)) < 0.1 / 60 / 180 * pi) break;
 		}
 		V = B * x1 - ll;   //ÖÐÎó²î
 		ss = "XS0: " + QString::number(XS0) + '\n' + "YS0: " + QString::number(YS0) + '\n' + "ZS0: " + QString::number(ZS0) + '\n' + "fa: " + QString::number(fa) + '\n' + "w: " + QString::number(w) + '\n' + "ka: " + QString::number(ka) + '\n';
